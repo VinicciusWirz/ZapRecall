@@ -42,14 +42,41 @@ export const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   p{
-    margin-top: 9px;
+    margin-top: ${props => props.questionProgressNumber > 0 && '9px'};
   }
   div{
     display: flex;
   }
   img{
-    margin: 6px 2.5px 0;
+    margin: 6px 2.5px 10px;
     width: 23px;
     height: 23px;
+  }
+`;
+
+export const FinalMessage = styled.section`
+  display: ${props => props.questionProgressNumber === props.decklength ? 'flex' : 'none'};
+  flex-direction: column;
+  align-items: center;
+  width: 222px;
+  margin-top: 17px;
+  h6{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+    margin-bottom: 14px;
+  }
+  p{
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 14px;
   }
 `;

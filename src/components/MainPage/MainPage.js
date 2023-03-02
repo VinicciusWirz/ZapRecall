@@ -1,6 +1,6 @@
 import logo from "../../assets/logo.png";
 import CardList from "../CardList/CardList";
-import { Header, Footer } from "./styled";
+import { Header, Footer, FinalMessage } from "./styled";
 import deck from "../../utils/deck";
 import { useState } from "react";
 import finalResult from "../../utils/finalResult";
@@ -25,6 +25,7 @@ export default function MainPage() {
         const newResultLine = [...resultLine];
         newResultLine.push(id);
         setResultLine(newResultLine);
+        Congratulations();
     }
 
     function flipCard(id, progress) {
@@ -42,6 +43,25 @@ export default function MainPage() {
         setResultArr(newResultArray);
     }
 
+    function Congratulations() {
+        if (questionProgressNumber === deck.length) {
+            if (!resultLine.includes('nay')) {
+                return (
+                    <>
+                        <h6>🥳 Parabéns!</h6>
+                        <p>Você não esqueceu de nenhum flashcard!</p>
+                    </>
+                );
+            }
+            return (
+                <>
+                    <h6>😥 Putz...</h6>
+                    <p>Ainda faltam alguns... Mas não desanime!</p>
+                </>
+            );
+        }
+    }
+
     return (
         <>
             <Header>
@@ -56,7 +76,10 @@ export default function MainPage() {
                 resultArr={resultArr}
                 resultId={resultId}
             />
-            <Footer data-test="footer">
+            <Footer data-test="footer" questionProgressNumber={questionProgressNumber}>
+                <FinalMessage questionProgressNumber={questionProgressNumber} decklength={deck.length} data-test="finish-text">
+                    <Congratulations />
+                </FinalMessage>
                 <p>{questionProgressNumber}/{deck.length} CONCLUÍDOS</p>
                 <div>
                     {resultLine.map((r, i) => <img key={i} src={finalResult[r].imgResult} alt={r} data-test={finalResult[r].datatest} />)}
