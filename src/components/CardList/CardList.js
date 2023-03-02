@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import FlashCard from "../FlashCard/FlashCard"
+import styled from "styled-components";
+import FlashCard from "../FlashCard/FlashCard";
 
 export default function CardList({ deck, btnFunctions, progressArr, flipCard, resultArr, resultId }) {
     return (
@@ -16,9 +16,9 @@ export default function CardList({ deck, btnFunctions, progressArr, flipCard, re
                 resultId={resultId}
             />)}
         </List>
-    )
+    );
 }
 
 const List = styled.ul`
     margin-bottom: 116px;
-`
+`;

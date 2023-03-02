@@ -49,5 +49,5 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-`
+`;
 export default Reset;

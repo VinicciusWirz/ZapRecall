@@ -26,13 +26,15 @@ export const CardContent = styled.li`
         width: ${props => props.progress === '0' ? '20px' : props.progress === '1' ? '30px' : '23px'};
         height: ${props => props.progress === '0' ? '23px' : props.progress === '1' ? '20px' : '23px'};
     }
-`
+`;
+
 export const BtnList = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 20px;
-`
+`;
+
 export const Btn = styled.button`
     color: #FFFFFF;
     font-family: 'Recursive';
@@ -50,4 +52,4 @@ export const Btn = styled.button`
     border: none;
     padding: 0 10px;
     background-color: ${props => props.position === 0 ? '#FF3030' : props.position === 1 ? '#FF922E' : '#2FBE34'};
-`
+`;

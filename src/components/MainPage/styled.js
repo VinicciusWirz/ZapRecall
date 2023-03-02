@@ -22,7 +22,8 @@ export const Header = styled.header`
     transform: rotate(0.58deg);
     width: 203px;
   }
-`
+`;
+
 export const Footer = styled.footer`
   position: fixed;
   left: 0;
@@ -39,4 +40,4 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;

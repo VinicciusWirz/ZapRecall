@@ -1,8 +1,8 @@
-import logo from "../../assets/logo.png"
-import CardList from "../CardList/CardList"
-import { Header, Footer } from "./styled"
-import deck from "../../utils/deck"
-import { useState } from "react"
+import logo from "../../assets/logo.png";
+import CardList from "../CardList/CardList";
+import { Header, Footer } from "./styled";
+import deck from "../../utils/deck";
+import { useState } from "react";
 
 export default function MainPage() {
     const [resultArr, setResultArr] = useState(Array(deck.length).fill('play'));
@@ -12,10 +12,10 @@ export default function MainPage() {
         0: 'nay',
         1: 'meh',
         2: 'yay'
-    }
+    };
 
     function pickAnswer(id, cardIndex) {
-        let newResultArray = [...resultArr];
+        const newResultArray = [...resultArr];
         flipCard(cardIndex);
         newResultArray[cardIndex] = id;
         setResultArr(newResultArray);
@@ -26,15 +26,15 @@ export default function MainPage() {
         if (progress === '3'){
             return;
         }
-        let newProgress = (Number(progressArr[id]) + 1).toString();
-        let newProgressArr = [...progressArr];
-        let newResultArray = [...resultArr];
+        const newProgress = (Number(progressArr[id]) + 1).toString();
+        const newProgressArr = [...progressArr];
+        const newResultArray = [...resultArr];
         newProgressArr[id] = newProgress;
         setProgressArr(newProgressArr);
         if(newResultArray[id] === 'play'){
-            newResultArray[id] = 'flip'
+            newResultArray[id] = 'flip';
         }
-        setResultArr(newResultArray)
+        setResultArr(newResultArray);
     }
 
     return (
@@ -55,5 +55,5 @@ export default function MainPage() {
                 <p>{questionProgressNumber}/{deck.length} CONCLUÍDOS</p>
             </Footer>
         </>
-    )
+    );
 }

@@ -10,6 +10,6 @@ body{
     align-items: center;
     background: #FB6B6B;
 }
-`
+`;
 
 export default GlobalStyle;
