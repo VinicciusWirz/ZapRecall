@@ -1,38 +1,19 @@
 import { Btn, BtnList, CardContent } from "./styled";
-import play from "../../assets/seta_play.png";
-import flip from "../../assets/seta_virar.png";
-import yayImg from "../../assets/icone_certo.png";
-import nayImg from "../../assets/icone_erro.png";
-import mehImg from "../../assets/icone_quase.png";
+import finalResult from "../../utils/finalResult";
 
 const buttons = [
     'Não lembrei',
     'Quase não lembrei',
     'Zap!'
-]
+];
 
 export default function FlashCard({ index, question, answer, progress, result, btnFunctions, flipCard, resultId }) {
-    const questionNumber = index + 1;
-    if (progress === '0') {
-        return (
-            <CardContent progress={progress} data-test="flashcard">
-                <p data-test="flashcard-text">Pergunta {questionNumber}</p>
-                <img src={play} alt='play' onClick={() => flipCard(index)} data-test="play-btn" />
-            </CardContent>
-        )
-    }
-    if (progress === '1') {
-        return (
-            <CardContent progress={progress}>
-                <p>{question}</p>
-                <img src={flip} alt='flip' onClick={() => flipCard(index)} data-test="turn-btn" />
-            </CardContent>
-        )
-    }
-    if (progress === '2') {
-        return (
-            <CardContent progress={progress}>
-                <p data-test="flashcard-text">{answer}</p>
+    const questionNumber = `Pergunta ${(index + 1).toString()}`;
+    const text = progress === '0' ? questionNumber : progress === '1' ? question : progress === '2' ? answer : questionNumber;
+
+    function DynamicIcons() {
+        if (progress === '2') {
+            return (
                 <BtnList>
                     {buttons.map((option, i) => <Btn
                         key={option}
@@ -42,36 +23,20 @@ export default function FlashCard({ index, question, answer, progress, result, b
                     >{option}</Btn>
                     )}
                 </BtnList>
-            </CardContent>
-        )
+            );
+        } else {
+            return (<img src={finalResult[result].imgResult}
+                alt={result}
+                data-test={finalResult[result].datatest}
+                onClick={() => flipCard(index, progress)}
+            />);
+        }
     }
-    if (progress === '3') {
-        const finalResult = {
-            'nay': {
-                color: '#FF3030',
-                imgResult: nayImg,
-                datatest: 'no-icon'
-            },
-            'meh': {
-                color: '#FF922E',
-                imgResult: mehImg,
-                datatest: 'partial-icon'
-            },
-            'yay': {
-                color: '#2FBE34',
-                imgResult: yayImg,
-                datatest: 'zap-icon'
-            }
-        };
-        return (
-            <CardContent progress={progress} conclusionColor={finalResult[result].color}>
-                <p data-test="flashcard-text">Pergunta {questionNumber}</p>
-                <img
-                    src={finalResult[result].imgResult}
-                    alt={result}
-                    data-test={finalResult[result].datatest}
-                />
-            </CardContent>
-        );
-    }
+
+    return (
+        <CardContent progress={progress} conclusionColor={finalResult[result].color}>
+            <p data-test="flashcard-text">{text}</p>
+            <DynamicIcons />
+        </CardContent>
+    );
 }

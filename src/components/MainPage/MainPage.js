@@ -5,7 +5,7 @@ import deck from "../../utils/deck"
 import { useState } from "react"
 
 export default function MainPage() {
-    const [resultArr, setResultArr] = useState(Array(deck.length).fill(''));
+    const [resultArr, setResultArr] = useState(Array(deck.length).fill('play'));
     const [progressArr, setProgressArr] = useState(Array(deck.length).fill('0'));
     const [questionProgressNumber, setQuestionProgressNumber] = useState(0);
     const resultId = {
@@ -22,11 +22,19 @@ export default function MainPage() {
         setQuestionProgressNumber(questionProgressNumber + 1);
     }
 
-    function flipCard(id) {
+    function flipCard(id, progress) {
+        if (progress === '3'){
+            return;
+        }
         let newProgress = (Number(progressArr[id]) + 1).toString();
         let newProgressArr = [...progressArr];
+        let newResultArray = [...resultArr];
         newProgressArr[id] = newProgress;
         setProgressArr(newProgressArr);
+        if(newResultArray[id] === 'play'){
+            newResultArray[id] = 'flip'
+        }
+        setResultArr(newResultArray)
     }
 
     return (
