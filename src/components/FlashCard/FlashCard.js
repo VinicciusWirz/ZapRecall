@@ -34,7 +34,7 @@ export default function FlashCard({ index, question, answer, progress, result, b
     }
 
     return (
-        <CardContent progress={progress} conclusionColor={finalResult[result].color}>
+        <CardContent progress={progress} conclusionColor={finalResult[result].color} data-test='flashcard'>
             <p data-test="flashcard-text">{text}</p>
             <DynamicIcons />
         </CardContent>
