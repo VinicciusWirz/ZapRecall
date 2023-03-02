@@ -38,6 +38,18 @@ export const Footer = styled.footer`
   line-height: 22px;
   color: #333333;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  p{
+    margin-top: 9px;
+  }
+  div{
+    display: flex;
+  }
+  img{
+    margin: 6px 2.5px 0;
+    width: 23px;
+    height: 23px;
+  }
 `;
