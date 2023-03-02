@@ -1,7 +1,5 @@
 import Reset from "./GlobalStyles/Reset"
 import GlobalStyle from "./GlobalStyles/GlobalStyle"
-
-import styled from "styled-components";
 import MainPage from "./components/MainPage/MainPage";
 
 function App() {
@@ -10,7 +8,6 @@ function App() {
       <Reset />
       <GlobalStyle />
       <MainPage />
-
     </>
   );
 }

@@ -12,8 +12,8 @@ export const CardContent = styled.li`
     align-items: ${props => props.progress === '1' || props.progress === '2' ? 'flex-start' : 'center'};
     flex-direction: ${props => props.progress === '1' || props.progress === '2' && 'column'};
     min-height: ${props => props.progress === '1' || props.progress === '2' ? '131px' : 'auto'};
-    /* font-family: 'Recursive', sans-serif; */
     p{
+        font-family: 'Recursive', sans-serif;
         font-style: normal;
         font-weight: ${props => props.progress === '1' || props.progress === '2' ? '400' : '700'};
         font-size: 16px;
@@ -23,6 +23,8 @@ export const CardContent = styled.li`
     }
     img{
         align-self: ${props => props.progress === '1' && 'flex-end'};
+        width: ${props => props.progress === '0' ? '20px' : props.progress === '1' ? '30px' : '23px'};
+        height: ${props => props.progress === '0' ? '23px' : props.progress === '1' ? '20px' : '23px'};
     }
 `
 export const BtnList = styled.div`

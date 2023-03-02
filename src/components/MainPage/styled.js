@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Header = styled.header`
+export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,4 +23,20 @@ const Header = styled.header`
     width: 203px;
   }
 `
-export default Header;
+export const Footer = styled.footer`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  min-height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Recursive', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
