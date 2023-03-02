@@ -11,7 +11,7 @@ const buttons = [
     'Zap!'
 ]
 
-export default function FlashCard({ index, question, answer, progress, result, btnFunctions, flipCard }) {
+export default function FlashCard({ index, question, answer, progress, result, btnFunctions, flipCard, resultId }) {
     const questionNumber = index + 1;
     if (progress === '0') {
         return (
@@ -37,7 +37,7 @@ export default function FlashCard({ index, question, answer, progress, result, b
                     {buttons.map((option, i) => <Btn
                         key={option}
                         position={i}
-                        onClick={() => btnFunctions(i, index)}
+                        onClick={() => btnFunctions(resultId[i], index)}
                         data-test={i === 0 ? 'no-btn' : i === 1 ? 'partial-btn' : 'zap-btn'}
                     >{option}</Btn>
                     )}

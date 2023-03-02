@@ -7,28 +7,25 @@ import { useState } from "react"
 export default function MainPage() {
     const [resultArr, setResultArr] = useState(Array(deck.length).fill(''));
     const [progressArr, setProgressArr] = useState(Array(deck.length).fill('0'));
+    const [questionProgressNumber, setQuestionProgressNumber] = useState(0);
+    const resultId = {
+        0: 'nay',
+        1: 'meh',
+        2: 'yay'
+    }
 
     function pickAnswer(id, cardIndex) {
-        let newResult = '';
         let newResultArray = [...resultArr];
         flipCard(cardIndex);
-        if (id === 0) {
-            newResult = 'nay';
-        }
-        if (id === 1) {
-            newResult = 'meh';
-        }
-        if (id === 2) {
-            newResult = 'yay';
-        }
-        newResultArray[cardIndex] = newResult;
+        newResultArray[cardIndex] = id;
         setResultArr(newResultArray);
+        setQuestionProgressNumber(questionProgressNumber + 1);
     }
 
     function flipCard(id) {
         let newProgress = (Number(progressArr[id]) + 1).toString();
         let newProgressArr = [...progressArr];
-        newProgressArr[id] = newProgress
+        newProgressArr[id] = newProgress;
         setProgressArr(newProgressArr);
     }
 
@@ -44,9 +41,10 @@ export default function MainPage() {
                 flipCard={flipCard}
                 progressArr={progressArr}
                 resultArr={resultArr}
+                resultId={resultId}
             />
             <Footer data-test="footer">
-                <p>X/{deck.length} CONCLUÍDOS</p>
+                <p>{questionProgressNumber}/{deck.length} CONCLUÍDOS</p>
             </Footer>
         </>
     )
