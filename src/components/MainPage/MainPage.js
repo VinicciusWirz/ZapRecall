@@ -11,9 +11,9 @@ export default function MainPage() {
     const [questionProgressNumber, setQuestionProgressNumber] = useState(0);
     const [resultLine, setResultLine] = useState([]);
     const resultId = {
-        0: 'nay',
-        1: 'meh',
-        2: 'yay'
+        0: 'no',
+        1: 'partial',
+        2: 'zap'
     };
 
     function pickAnswer(id, cardIndex) {
@@ -45,7 +45,7 @@ export default function MainPage() {
 
     function Congratulations() {
         if (questionProgressNumber === deck.length) {
-            if (!resultLine.includes('nay')) {
+            if (!resultLine.includes('no')) {
                 return (
                     <>
                         <h6>🥳 Parabéns!</h6>
@@ -75,6 +75,8 @@ export default function MainPage() {
                 progressArr={progressArr}
                 resultArr={resultArr}
                 resultId={resultId}
+                questionProgressNumber={questionProgressNumber}
+                decklength={deck.length}
             />
             <Footer data-test="footer" questionProgressNumber={questionProgressNumber}>
                 <FinalMessage questionProgressNumber={questionProgressNumber} decklength={deck.length} data-test="finish-text">

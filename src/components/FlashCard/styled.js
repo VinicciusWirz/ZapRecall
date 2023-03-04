@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardContent = styled.li`
-    background: ${props => props.progress === '1' || props.progress === '2' ? '#FFFFD5' : '#FFFFFF'};
+    background: ${props => (props.progress === '1' || props.progress === '2') ? '#FFFFD5' : '#FFFFFF'};
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     width: 300px;
@@ -9,13 +9,13 @@ export const CardContent = styled.li`
     margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
-    align-items: ${props => props.progress === '1' || props.progress === '2' ? 'flex-start' : 'center'};
-    flex-direction: ${props => props.progress === '1' || props.progress === '2' && 'column'};
-    min-height: ${props => props.progress === '1' || props.progress === '2' ? '131px' : 'auto'};
+    align-items: ${props => (props.progress === '1' || props.progress === '2') ? 'flex-start' : 'center'};
+    flex-direction: ${props => (props.progress === '1' || props.progress === '2') && 'column'};
+    min-height: ${props => (props.progress === '1' || props.progress === '2') ? '131px' : 'auto'};
     p{
         font-family: 'Recursive', sans-serif;
         font-style: normal;
-        font-weight: ${props => props.progress === '1' || props.progress === '2' ? '400' : '700'};
+        font-weight: ${props => (props.progress === '1' || props.progress === '2') ? '400' : '700'};
         font-size: 16px;
         line-height: 19px;
         color: ${props => props.progress === '3' ? props.conclusionColor : '#333333'};

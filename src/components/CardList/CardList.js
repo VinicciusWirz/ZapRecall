@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import FlashCard from "../FlashCard/FlashCard";
 
-export default function CardList({ deck, btnFunctions, progressArr, flipCard, resultArr, resultId }) {
+export default function CardList(props) {
+    const { deck, btnFunctions, progressArr, flipCard, resultArr, resultId, questionProgressNumber, decklength } = props;
     return (
-        <List>
+        <List questionProgressNumber={questionProgressNumber} decklength={decklength}>
             {deck.map((card, i) => <FlashCard
                 key={i}
                 index={i}
@@ -20,5 +21,5 @@ export default function CardList({ deck, btnFunctions, progressArr, flipCard, re
 }
 
 const List = styled.ul`
-    margin-bottom: 116px;
+    margin-bottom: ${({ questionProgressNumber, decklength }) => questionProgressNumber === decklength ? '250px' : '116px'};
 `;

@@ -1,8 +1,9 @@
 import play from "../assets/seta_play.png";
 import flip from "../assets/seta_virar.png";
-import yayImg from "../assets/icone_certo.png";
-import nayImg from "../assets/icone_erro.png";
-import mehImg from "../assets/icone_quase.png";
+import zapImg from "../assets/icone_certo.png";
+import noImg from "../assets/icone_erro.png";
+import partialImg from "../assets/icone_quase.png";
+
 const finalResult = {
     'play': {
         color: '#333333',
@@ -14,19 +15,19 @@ const finalResult = {
         imgResult: flip,
         datatest: 'turn-btn'
     },
-    'nay': {
+    'no': {
         color: '#FF3030',
-        imgResult: nayImg,
+        imgResult: noImg,
         datatest: 'no-icon'
     },
-    'meh': {
+    'partial': {
         color: '#FF922E',
-        imgResult: mehImg,
+        imgResult: partialImg,
         datatest: 'partial-icon'
     },
-    'yay': {
+    'zap': {
         color: '#2FBE34',
-        imgResult: yayImg,
+        imgResult: zapImg,
         datatest: 'zap-icon'
     }
 };
