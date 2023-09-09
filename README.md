@@ -2,7 +2,7 @@
 In our fast-paced world, learning and remembering information can be challenging. ZapRecall combines instant messaging convenience with the power of Active Recall to enhance learning and knowledge retention.
 
 <p align='center'>
-  <img src="https://github.com/VinicciusWirz/ZapRecall/assets/121836753/a3184698-3c4b-48d2-b91e-26a7d38254bb"/>
+  <img src=https://github.com/VinicciusWirz/ZapRecall/assets/121836753/ad1ea7f3-ac64-4223-a671-d1b560dffd94"/>
 </p>
 <p align='center'>
   Try it out: https://zap-recall-psix.vercel.app/
