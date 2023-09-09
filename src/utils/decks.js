@@ -36,10 +36,6 @@ const decks = {
   naruto: {
     cards: [
       {
-        question: "Quem é Naruto?",
-        answer: "Uma extensão da linguagem JavaScript",
-      },
-      {
         question: "Qual é o nome do espírito que habita o corpo de Naruto?",
         answer: "Kurama, o Nove-Caudas.",
       },
