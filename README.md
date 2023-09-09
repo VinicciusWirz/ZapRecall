@@ -1,5 +1,5 @@
 # ZapRecall
-In our fast-paced world, learning and remembering information can be challenging. ZapRecall combines instant messaging convenience with the power of Active Recall to enhance learning and knowledge retention.
+In our fast-paced world, learning and remembering information can be challenging. ZapRecall harnesses the power of Active Recall to boost learning and knowledge retention.
 
 <p align='center'>
   <img src=https://github.com/VinicciusWirz/ZapRecall/assets/121836753/ad1ea7f3-ac64-4223-a671-d1b560dffd94"/>
